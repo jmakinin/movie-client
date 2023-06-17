@@ -28,6 +28,22 @@ function App() {
     }
   }
 
+  const getMovieData = async (movieId) => {
+    try {
+
+      const response = await api.get(`/movies/${movieId}`);
+
+      const singleMovie = response.data;
+
+      setMovie(singleMovie);
+
+      setReviews(singleMovie.setReviews)
+
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   useEffect(() => {
     getMovies();
   }, [])
