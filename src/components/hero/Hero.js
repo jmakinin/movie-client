@@ -8,6 +8,10 @@ const Hero = ({ movies }) => {
 
     const navigate = useNavigate();
 
+    function reviews(movieId) {
+        navigate(`/Reviews/${movieId}`);
+    }
+
     return (
         <div className='movie-carousel-container'>
             <Carousel>
